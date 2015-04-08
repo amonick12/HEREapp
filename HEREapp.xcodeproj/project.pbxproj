@@ -17,6 +17,8 @@
 		003F6D441AD5D56E0049ADAF /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F6D431AD5D56E0049ADAF /* CardViewCell.swift */; };
 		003F6D461AD5D5880049ADAF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F6D451AD5D5880049ADAF /* Card.swift */; };
 		003F6D481AD5D71E0049ADAF /* cloud.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 003F6D471AD5D71E0049ADAF /* cloud.jpg */; };
+		003F6D4C1AD5EBAD0049ADAF /* MapTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F6D4B1AD5EBAD0049ADAF /* MapTransitionManager.swift */; };
+		003F6D4E1AD5EC0F0049ADAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F6D4D1AD5EC0F0049ADAF /* MapViewController.swift */; };
 		A13F5F5887D0907FD8E4EA0E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FA6B5BD95809DAEDFB293F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		003F6D431AD5D56E0049ADAF /* CardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		003F6D451AD5D5880049ADAF /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		003F6D471AD5D71E0049ADAF /* cloud.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloud.jpg; sourceTree = "<group>"; };
+		003F6D4B1AD5EBAD0049ADAF /* MapTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTransitionManager.swift; sourceTree = "<group>"; };
+		003F6D4D1AD5EC0F0049ADAF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		19FA6B5BD95809DAEDFB293F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B32D215BDCA8784F148DC7C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7260B6036CD14C2712FB282F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				003F6D411AD5D5410049ADAF /* CardsViewController.swift */,
 				003F6D431AD5D56E0049ADAF /* CardViewCell.swift */,
 				003F6D451AD5D5880049ADAF /* Card.swift */,
+				003F6D4B1AD5EBAD0049ADAF /* MapTransitionManager.swift */,
+				003F6D4D1AD5EC0F0049ADAF /* MapViewController.swift */,
 			);
 			path = HEREapp;
 			sourceTree = "<group>";
@@ -303,8 +309,10 @@
 				003F6D241AD5D4CD0049ADAF /* ViewController.swift in Sources */,
 				003F6D221AD5D4CD0049ADAF /* AppDelegate.swift in Sources */,
 				003F6D461AD5D5880049ADAF /* Card.swift in Sources */,
+				003F6D4C1AD5EBAD0049ADAF /* MapTransitionManager.swift in Sources */,
 				003F6D441AD5D56E0049ADAF /* CardViewCell.swift in Sources */,
 				003F6D421AD5D5410049ADAF /* CardsViewController.swift in Sources */,
+				003F6D4E1AD5EC0F0049ADAF /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

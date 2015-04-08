@@ -6,6 +6,38 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="1V4-eS-Uda">
+            <objects>
+                <viewController id="bYx-Pg-92d" customClass="MapViewController" customModule="HEREapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t4i-BZ-Dcj"/>
+                        <viewControllerLayoutGuide type="bottom" id="94K-k2-kjw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2gK-Ii-5h8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fVM-lR-K5g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fVM-lR-K5g" secondAttribute="trailing" id="EPr-4h-F3V"/>
+                            <constraint firstItem="fVM-lR-K5g" firstAttribute="bottom" secondItem="94K-k2-kjw" secondAttribute="top" id="FbX-2u-Xxq"/>
+                            <constraint firstItem="fVM-lR-K5g" firstAttribute="leading" secondItem="2gK-Ii-5h8" secondAttribute="leading" id="NON-2f-9sA"/>
+                            <constraint firstItem="fVM-lR-K5g" firstAttribute="top" secondItem="2gK-Ii-5h8" secondAttribute="top" id="egt-G9-9SP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="fVM-lR-K5g" id="e6o-jc-FXm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mbw-0N-abU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-328"/>
+        </scene>
         <!--Cards View Controller-->
         <scene sceneID="uP4-Wh-aGp">
             <objects>
@@ -144,23 +176,39 @@
                                     <outlet property="delegate" destination="SZV-LY-SQ6" id="BqM-dH-X9N"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0O-E2-oMM">
+                                <rect key="frame" x="536" y="549" width="57" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="iLs-ac-Oyo"/>
+                                    <constraint firstAttribute="height" constant="43" id="wJ1-gR-qms"/>
+                                </constraints>
+                                <state key="normal" title="Map">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mapButtonPressed:" destination="SZV-LY-SQ6" eventType="touchUpInside" id="ipQ-SB-6oW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="XaD-UN-HHQ" secondAttribute="centerY" id="3Vx-cO-LNn"/>
                             <constraint firstAttribute="centerX" secondItem="XaD-UN-HHQ" secondAttribute="centerX" id="76Q-Ji-oSP"/>
                             <constraint firstItem="aPx-1v-PYc" firstAttribute="leading" secondItem="e61-cJ-8Sk" secondAttribute="leadingMargin" constant="18" id="7AL-pY-nae"/>
+                            <constraint firstItem="PqZ-on-YM0" firstAttribute="top" secondItem="I0O-E2-oMM" secondAttribute="bottom" constant="8" id="IZk-zT-dxC"/>
                             <constraint firstItem="o1V-4u-P5y" firstAttribute="top" secondItem="pRm-kR-R51" secondAttribute="bottom" id="LrQ-s0-Eza"/>
                             <constraint firstItem="XaD-UN-HHQ" firstAttribute="leading" secondItem="e61-cJ-8Sk" secondAttribute="leading" id="O4x-Kk-Vqc"/>
                             <constraint firstItem="o1V-4u-P5y" firstAttribute="leading" secondItem="e61-cJ-8Sk" secondAttribute="leadingMargin" constant="6" id="SoG-sy-7xE"/>
                             <constraint firstAttribute="trailing" secondItem="XaD-UN-HHQ" secondAttribute="trailing" id="XI6-4J-iKA"/>
                             <constraint firstItem="PqZ-on-YM0" firstAttribute="top" secondItem="aPx-1v-PYc" secondAttribute="bottom" constant="17" id="kla-AU-bxq"/>
+                            <constraint firstAttribute="trailing" secondItem="I0O-E2-oMM" secondAttribute="trailing" constant="7" id="qgh-2Q-OY0"/>
                             <constraint firstItem="XaD-UN-HHQ" firstAttribute="top" secondItem="o1V-4u-P5y" secondAttribute="bottom" constant="-1" id="tLG-AG-zq7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="QP1-rZ-YuV" id="Acw-lD-SrU"/>
                         <outlet property="collectionView" destination="XaD-UN-HHQ" id="DT5-0F-CJq"/>
+                        <segue destination="bYx-Pg-92d" kind="presentation" identifier="MapSegue" id="GIL-hE-Dyz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lru-bf-1Gt" sceneMemberID="firstResponder"/>

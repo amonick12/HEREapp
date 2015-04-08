@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CardCellDelegate {
+class CardsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CardCellDelegate, MapTransitionManagerDelegate {
 
     @IBOutlet weak var backgroundImageView:UIImageView!
     @IBOutlet weak var collectionView:UICollectionView!
@@ -32,6 +32,8 @@ class CardsViewController: UIViewController, UICollectionViewDelegate, UICollect
         Card(id: "NewYork001", name: "New York", address: "United States", featuredImage: UIImage(named: "newyork"), distance: "8 miles", isLiked: false),
         Card(id: "Kyoto001", name: "Kyoto", address: "Japan", featuredImage: UIImage(named: "kyoto"), distance: "9 miles", isLiked: false)]
     
+    var mapTransitionManager = MapTransitionManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +52,20 @@ class CardsViewController: UIViewController, UICollectionViewDelegate, UICollect
             flowLayout.itemSize = CGSizeMake(250.0, 300.0)
         }
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "MapSegue" {
+            let mapViewController = segue.destinationViewController as MapViewController
+            mapViewController.transitioningDelegate = self.mapTransitionManager
+            self.mapTransitionManager.delegate = self
+        }
+    
+    }
+    
+    func dismiss() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -83,6 +99,9 @@ class CardsViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     }
     
+    @IBAction func mapButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("MapSegue", sender: self)
+    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
